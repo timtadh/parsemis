@@ -16,7 +16,6 @@ parsemis_layout[:source, :main, :java] = "src"
 
 define 'parsemis', layout: parsemis_layout do
   project.version = 'git-master'
-  mkdir_p _('target/classes')
   compile.with parsemis_libs
   package(:jar).with(:manifest => {
     'Main-Class' => 'de.parsemis.Miner',
