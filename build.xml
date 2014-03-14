@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project basedir="." default="all" name="parsemis">
+
+	<!-- BEGIN CONFIG -->
+
+	<!-- global location definitions -->
+	<property name="builddir"	location="${basedir}/classes"/>
+	<property name="docdir"		location="${basedir}/javadoc"/>
+	<property name="libdir"		location="${basedir}/lib"/>
+	<property name="srcdir"		location="${basedir}/src"/>
+	<property name="headdir"	location="${basedir}/headers"/>
+
+	<!-- compiler -->
+	<property name="CC" value="/usr/bin/gcc" />
+
+	<!-- set classpath to build this project -->
+	<!-- $CLASSPATH is not used -->
+	<!-- ${builddir} is automatically part of the ant classpath to build this project -->
+	<path id="classpath">
+		<fileset dir="${libdir}" includes="**/*.jar"/>
+		<!-- $CLASSPATH environment variable -->
+		<pathelement path="${java.class.path}/"/>
+	</path>
+
+	<!-- END CONFIG -->
+
+	<!-- BEGIN PROPERTY DEFINITION -->
+
+	<!-- END PROPERTY DEFINITION -->
+
+	<!-- BEGIN TASKS -->
+
+	<target name="all" depends="javac" description="clean the project and build it again"/>
+        <target name="rebuild" depends="proper,javac" description="clean the project and build it again"/>
+
+	<target name="paths">
+		<mkdir dir="${docdir}"/>
+		<mkdir dir="${builddir}"/>
+		<mkdir dir="${headdir}"/>
+	</target>
+
+	<target name="clean" description="remove all class files of the project">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${builddir}" includes="**/*"/>
+			<fileset file="${basedir}/${ant.project.name}.jar"/>
+		</delete>
+	</target>
+
+	<target name="proper" depends="clean" description="remove all unneed (temporary) files">
+		<delete includeEmptyDirs="true">
+			<!-- javadoc -->
+			<fileset dir="${docdir}" includes="**/*"/>
+			<!-- antlr -->
+			<fileset dir="${srcdir}/de/parsemis/parsers/antlr" includes="**/*.java"/>
+		</delete>
+	</target>
+
+	<target name="antlr" description="create all parsers">
+		<antlr target="${srcdir}/de/parsemis/parsers/antlr/Dot.g" outputdirectory="${srcdir}/de/parsemis/parsers/antlr">
+			<classpath path="${libdir}/antlr.jar"/>
+		</antlr>
+	</target>
+	
+	<target name="javadoc" description="generate javadoc of the project">
+		<tstamp> <format property="builtday" pattern="yyyy-MM-dd"/> </tstamp>
+
+		<javadoc destdir="${docdir}" classpathref="classpath" source="1.5" Overview="${srcdir}/overview.html" windowtitle="ParSeMiS API">
+			<doctitle><![CDATA[ParSeMiS - Parallel and Sequencial Mining Suite<br/>API Specification]]></doctitle>
+			<header><![CDATA[<b>ParSeMiS (built ]]>${builtday}<![CDATA[)<br/>Parallel and Sequencial Mining Suite</b>]]></header>
+			<packageset dir="${srcdir}" defaultexcludes="yes"/>
+		</javadoc>
+	</target>
+
+	<target name="javac" depends="paths,antlr" description="build the project">
+		<tstamp/>
+		<javac srcdir="${srcdir}" destdir="${builddir}" classpathref="classpath" debug="on" source="1.5" target="1.5" deprecation="true" nowarn="true"/>
+
+		<!-- generate java native interfaces -->
+		<javah destdir="${headdir}" classpath="${builddir}">
+			<class name="de.parsemis.miner.environment.LocalEnvironment"/>
+		</javah>
+
+		<exec dir="${headdir}" executable="${CC}">
+			<arg line="-o ${libdir}/libjava-time.so -O
+			-shared -fPIC -I${JAVA_INCLUDE}
+			-I${JAVA_INCLUDE}/linux -I${headdir}
+			${srcdir}/de/parsemis/miner/environment/LocalEnvironment.c" />
+		</exec>
+	</target>
+
+	<target name="jar" depends="javac" description="create project jar">
+		<!-- create jar file -->
+		<jar destfile="${ant.project.name}.jar" basedir="${builddir}" index="true">
+			<manifest>
+				<!-- default attributes -->
+				<attribute name="Main-Class"	value="de.parsemis.Miner"/>
+
+				<!-- selfdefined attributes -->
+				<attribute name="Built-By"	value="${user.name}"/>
+				<attribute name="Built-At"	value="${TODAY}"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- END TASKS -->
+
+</project>

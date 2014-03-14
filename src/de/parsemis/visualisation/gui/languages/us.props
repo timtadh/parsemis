@@ -1,0 +1,62 @@
+all_graphs:all graphs
+Algorithm_title: Algorithm: 
+box1: Algorithm: 
+box2: Graph type: 
+checkBoxClosed: closed Fragments
+checkBoxNoClosed: no closed Fragments
+controlTab0: Mining
+controlTab1: All graphs
+controlTab2: Stepwise
+currentValuesTitle: Current values
+currentFrequency:frequency: %s
+currentAlgo:algorithm: %s
+currentGraphType:graph type: %s
+ffsm:FFSM
+footerText:Sequence for graph '%s'
+fragmentBorderTitle1:  Fragment %d 
+fragmentBorderTitle0: %d fragments are found
+fragmentBorderTitle2:  Graph %d 
+fragmentTitle0: 
+fragmentTitle1:is in %d graphs found
+fragmentTitle2:bla %d blabla
+frequencySlider1:Graphs  
+frequencySlider2:Frequency 
+gaston:Gaston
+gspan:GSpan
+graphType_title: graph type: 
+leftColumn: Visualisation properties
+menu1: Database
+menu1_item1: Open database
+menu1_item2: Save image as...
+menu1_item3: Exit
+menu2: Image properties
+menu2_item1: Colored
+menu2_item2: With carbon labels
+menu2_item3: Hight quality
+menu2_submenu: Graph layouts
+message: No fragments found
+mofa:MoFa
+NoDatabase:No database selected
+NoParser:No parser class given for the file %s
+open_dialog: Open database...
+paths_only:paths only
+programm_title: ParSeMiS: Parallel Molecular mining
+running:running
+save_dialog: Save image as...
+save_dialog_width: Width
+save_dialog_height: Height
+save_dialog_error_size:than %dpx
+save_dialog_error_format:Integers greater
+sequenceOn: show sequence
+search_done: search done
+showButton: show graphs
+startButton: start search
+tab0: Fragments
+tab1: Graphs
+tab2: Embeddings
+textField: Database %s with %d graphs
+trees_only:trees only
+multitab:Layer %d
+stepStartButton: start step search
+multiTop: Fragment '%s' has %d children.
+multiTopNone: No fragment selected.

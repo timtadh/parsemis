@@ -1,0 +1,61 @@
+all_graphs:alle Graphen
+Algorithm_title: Algorithmus: 
+box1: Algorithmus: 
+box2: Typ des Graphen: 
+checkBoxClosed: "closed" Fragmenten
+checkBoxNoClosed: keine "closed" Fragmenten
+currentValuesTitle:Aktuelle Einstellungen
+currentFrequency:Frequenz: %s
+currentAlgo:Algorithmus: %s
+currentGraphType:Graphen von typ: %s
+ontrolTab0: Mining
+controlTab1: Alle Graphen
+ffsm:FFSM
+footerText:Sequenz fuer den Graphen "%s"
+fragmentBorderTitle1:Das %d. Fragment
+fragmentBorderTitle0: %d Fragment(e) gefunden
+fragmentBorderTitle2:  Graph %d 
+fragmentTitle0: 
+fragmentTitle1: in %d Graphen gefunden
+fragmentTitle2:bla %d blabla
+frequencySlider1:Graphen
+frequencySlider2:Frequenz 
+gaston:Gaston
+graphType_title: Graphtype: 
+gspan:GSpan
+leftColumn: Einstellungen
+menu1: Datenbank
+menu1_item1: Datenbank laden
+menu1_item2: Speichern als...
+menu1_item3: Beenden
+menu2: Bildeinstellungen
+menu2_item1: Colored
+menu2_item2: With carbon labels
+menu2_item3: Hoehe qualitaet
+menu2_submenu: Graph layouts
+message: Keine Fragmente gefunden
+mofa:MoFa
+NoDatabase:Keine Datenbank ausgewaehlt
+NoParser:Für die Datei %s existiert kein Parser
+open_dialog: Öffne Datenbank
+paths_only:nur paths
+programm_title: ParSeMiS: Parallele Molecular mining
+running:running
+search_done: search done
+save_dialog: Save image as...
+save_dialog_width: Breite
+save_dialog_height: Hoehe
+save_dialog_error_size:groesser als %dpx
+save_dialog_error_format:Nur Zahlen
+sequenceOn: Sequenz anzeigen
+showButton: Anzeigen
+startButton: Suche starten
+tab0: Fragmenten
+tab1: Graphen
+tab2: Embeddings
+textField: Datenbank: %s mit %d Graphen 
+trees_only:nur Baeume
+multitab:Ebene %d
+stepStartButton: starte schrittweise
+multiTop: Fragment "%s" hat %d Kinder.
+multiTopNone: Kein Fragment ausgewählt.

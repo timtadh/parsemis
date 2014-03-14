@@ -1,0 +1,32 @@
+// $ANTLR 2.7.6 (2005-12-22): Dot.g -> DotLexerTokenTypes.txt$
+DotLexer    // output token vocab name
+LCB=4
+RCB=5
+LSB=6
+RSB=7
+COMMA=8
+COLON=9
+SEMICOLON=10
+EQUAL=11
+ARROW=12
+DASH=13
+WHITESPACE=14
+CHARACTER=15
+DIGIT=16
+QUOTED_STRING=17
+ESCAPE=18
+NUMBER=19
+ID=20
+LITERAL_strict="strict"=21
+LITERAL_graph="graph"=22
+LITERAL_digraph="digraph"=23
+LITERAL_node="node"=24
+LITERAL_edge="edge"=25
+LITERAL_n="n"=26
+LITERAL_ne="ne"=27
+LITERAL_e="e"=28
+LITERAL_se="se"=29
+LITERAL_s="s"=30
+LITERAL_sw="sw"=31
+LITERAL_w="w"=32
+LITERAL_nw="nw"=33

@@ -1,0 +1,11 @@
+javadoc
+target
+*.class
+*.jar
+out
+x
+*.png
+*.dot
+*.bak
+*.swp
+*.swo

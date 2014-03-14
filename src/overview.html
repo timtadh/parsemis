@@ -1,0 +1,46 @@
+<!--
+ * created Aug 19, 2008
+ * 
+ * @by Marc Woerlein (woerlein@informatik.uni-erlangen.de)
+ *
+ * Copyright 2008 Marc Woerlein
+ * 
+ * This file is part of parsemis.
+ *
+ * Licence: 
+ *  LGPL: http://www.gnu.org/licenses/lgpl.html
+ *   EPL: http://www.eclipse.org/org/documents/epl-v10.php
+ *   See the LICENSE file in the project's top-level directory for details.
+-->
+<HTML>
+<BODY>
+This document is the documentation of ParSeMiS.
+<p>
+ParSeMiS is the Parallel and Sequential Mining Suite. The main focus of
+ParSeMiS is the search for frequent substructures 
+({@link de.parsemis.miner.general.Fragment}) in a given 
+({@link de.parsemis.graph.Graph}) database. This search can be configured to be 
+sequential on single core CPUs or parallel on multi(core) processor computer or 
+even on a cluster (supported by JavaParty).
+<p>
+ParSeMiS is a framework to design, implement, and test mining approaches.
+Core of each algorithm is the so called search lattice (see the 
+{@link de.parsemis.miner.chain.SearchLatticeNode} and 
+{@link de.parsemis.miner.chain.Extender} classes) containing all substructures of
+the database. The structure of such a lattice depends on the algorithm.
+<p>
+Example of a complete search lattice of a database containing two moleculare graphs:<br/>
+<img src="doc-files/searchlattice.png"><br/>
+For more details about the search lattice generation see {@link de.parsemis.miner.chain} 
+and the corresponding algorithms.
+<p>
+Mining a search lattice is equal to a traversal through the lattice and filtering the 
+interesting substructures. A depth first, breadth first or any other traversal
+is possible. Even parallel traversal is available (see {@link de.parsemis.strategy}).
+<p>
+In general, search lattices are huge so just the interesting or currently traversed
+parts, not the whole lattice, are generated and traversed.
+<p>
+@author Marc Woerlein (woerlein@informatik.uni-erlangen.de)
+</BODY>
+</HTML>
