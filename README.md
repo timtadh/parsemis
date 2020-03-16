@@ -13,7 +13,7 @@ In 2010, the distributed stack implementations have also been tested on other al
 # Requirements
 
 The ParSeMiS library requires three different external libraries:
-- (Apache Ant](https://ant.apache.org/) to manage the build operations
+- [Apache Ant](https://ant.apache.org/) to manage the build operations
 - [antlr](http://antlr.org/download.html) 2.7.6 for parsing `.dot` files 
 - [prefuse](https://sourceforge.net/projects/prefuse/) 2007.10.21 for the GUI
 
